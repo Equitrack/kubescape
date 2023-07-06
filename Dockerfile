@@ -1,12 +1,12 @@
-FROM oraclelinux:8-slim
+FROM oraclelinux:8
 
 MAINTAINER Equitrack
 
 # AutoUpdate kubescape binary when building
 
 RUN \
-  microdnf update -y && \
-  microdnf install -y unzip && \
+  dnf update -y && \
+  dnf install -y unzip && \
   KUBESCAPE_VERSION=$(curl --silent "https://api.github.com/repos/kubescape/kubescape/releases" | grep -oP '"tag_name": "\K(.*)(?=")' | head -n 1) && \
   echo -e "KUBESCAPE LAST VERSION: [${KUBESCAPE_VERSION}]" && \
   curl -LO https://github.com/kubescape/kubescape/archive/refs/tags/${KUBESCAPE_VERSION}.zip && \
