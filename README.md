@@ -1,5 +1,5 @@
 # Kubescape
 
-You are reading READMEmd File
+You are reading README.md File
 
 > Kubescape imagen to kubernetes by Equitrack
